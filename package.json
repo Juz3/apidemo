@@ -1,7 +1,4 @@
 {
-  "dependencies": {
-    "express": "^4.18.1"
-  },
   "scripts": {
     "start": "node server.js"
   },
@@ -19,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Juz3/apidemo/issues"
   },
-  "homepage": "https://github.com/Juz3/apidemo#readme"
+  "homepage": "https://github.com/Juz3/apidemo#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
