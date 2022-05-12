@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "apidemo",
+  "description": "node.js + react rest api demo 05/2022",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juz3/apidemo.git"
+  },
+  "author": "Jussi Koivumaki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Juz3/apidemo/issues"
+  },
+  "homepage": "https://github.com/Juz3/apidemo#readme"
+}
