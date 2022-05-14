@@ -14,11 +14,12 @@ function App() {
       </header>
       <div className="group-1">
         <h2>
-          Endpoint 1: Submit multiple integers separated by comma, calculate the
-          sum and tell if it's a prime number or not.
+          Endpoint 1: Submit multiple integers separated by comma, calculate and
+          return the sum and tell if it's a prime number or not.
         </h2>
-        <Input />
-        <SubmitButton />
+
+        <Input label="Give Integers, separated by comma" width="50ch" />
+        <SubmitButton label="Submit integer to endpoint 1" />
       </div>
       <div className="group-2">
         <h2>
@@ -26,8 +27,8 @@ function App() {
           not.
         </h2>
 
-        <Input />
-        <SubmitButton />
+        <Input label="Give Integer" width="15ch" />
+        <SubmitButton label="Submit integer to endpoint 2" />
       </div>
     </div>
   );

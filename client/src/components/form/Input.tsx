@@ -3,12 +3,12 @@ import "./Input.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-export default function TextInput() {
+export default function TextInput(props: { label: string; width: string }) {
   return (
     <Box
       component="form"
       sx={{
-        "& > :not(style)": { m: 1, width: "25ch" },
+        "& > :not(style)": { m: 1, width: props.width },
       }}
       noValidate
       autoComplete="off"
@@ -16,7 +16,7 @@ export default function TextInput() {
       <TextField
         id="outlined-basic"
         className="text-input"
-        label="Give Integer"
+        label={props.label}
         variant="outlined"
       />
     </Box>

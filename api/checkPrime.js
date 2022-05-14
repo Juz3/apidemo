@@ -1,21 +1,22 @@
 const express = require("express");
 const router = express.Router();
 
-// GET api/checkprime
+const checkForPrime = require("./primeCalc.js");
 
-router.use((req, res, next) => {
-  console.log("Time: ", Date.now());
-  next();
-});
-
+// GET api/checkprime/:num
 router.get("/:number", async (req, res) => {
   try {
     const number = req.params.number;
 
-    console.log(number);
+    console.log(number, checkForPrime(number));
 
-    const body = `given number: ${number}`;
-    res.status(200).send(body);
+    const isPrime = checkForPrime(number);
+
+    const responseText = isPrime
+      ? `Given number ${number} is a prime number.`
+      : `Given number ${number} is not a prime number.`;
+
+    res.status(200).send(responseText);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server error");
