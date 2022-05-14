@@ -1,12 +1,14 @@
 {
-  "scripts": {
-    "start": "node server.js"
-  },
   "name": "apidemo",
   "description": "node.js + react rest api demo 05/2022",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js",
+    "start-nodemon": "nodemon server.js",
+    "client": "npm run start --prefix client",
+    "both": "concurrently \"npm run start-nodemon\" \"npm run client\""
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Juz3/apidemo.git"
@@ -19,5 +21,9 @@
   "homepage": "https://github.com/Juz3/apidemo#readme",
   "dependencies": {
     "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.1.0",
+    "nodemon": "^2.0.16"
   }
 }

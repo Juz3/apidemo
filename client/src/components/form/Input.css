@@ -1,0 +1,9 @@
+.text-input .MuiOutlinedInput-root {
+  color: white;
+}
+.text-input .MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+}
+.text-input .MuiInputLabel-root {
+  color: white;
+}
