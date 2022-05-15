@@ -14,8 +14,6 @@ const getSumAndCheck = async (
         return response.json();
       })
       .then((data: { result: number; isPrime: boolean }) => {
-        console.log(data.isPrime);
-
         const sumText = `Sum of given numbers is ${data.result}. `;
 
         const primeText = data.isPrime

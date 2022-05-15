@@ -16,8 +16,6 @@ const getPrime = async (
         return response.json();
       })
       .then((data: { isPrime: boolean }) => {
-        console.log(data.isPrime);
-
         const responseText = data.isPrime
           ? `Given number ${queryToInteger} is a prime number.`
           : `Given number ${queryToInteger} is not a prime number.`;

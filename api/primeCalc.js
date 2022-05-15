@@ -1,7 +1,7 @@
-const checkForPrime = (num) => {
-  for (let i = 2, s = Math.sqrt(num); i <= s; i++)
-    if (num % i === 0) return false;
-  return num > 1;
+const checkForPrime = (number) => {
+  for (let i = 2, squareRoot = Math.sqrt(number); i <= squareRoot; i++)
+    if (number % i === 0) return false;
+  return number > 1;
 };
 
 module.exports = checkForPrime;

@@ -21,7 +21,6 @@ function App() {
 
   const handleGetSumAndCheck = (value: string) => {
     if (value !== null && value.length < 201) {
-      console.log(value.length);
       getSumAndCheck(value, setSumAndCheck);
     }
   };
