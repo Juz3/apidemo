@@ -32,16 +32,9 @@ router.get("/:numbers", async (req, res) => {
 
     const isPrime = checkForPrime(sum);
 
-    console.log("debug sum, isprime", sum, isPrime);
+    const resp = { result: sum, isPrime: isPrime };
 
-    const sumText = `Sum of given numbers is ${sum}. `;
-
-    const primeText = isPrime
-      ? `This is a prime number.`
-      : `This is not a prime number.`;
-
-    const body = sumText + primeText;
-    res.status(200).send(body);
+    res.status(200).send(resp);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server error");

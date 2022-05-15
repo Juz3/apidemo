@@ -1,9 +1,12 @@
-import * as React from "react";
 import "./Input.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-export default function TextInput(props: { label: string; width: string }) {
+export default function TextInput(props: {
+  label: string;
+  width: string;
+  action: (value: string) => void;
+}) {
   return (
     <Box
       component="form"
@@ -18,6 +21,9 @@ export default function TextInput(props: { label: string; width: string }) {
         className="text-input"
         label={props.label}
         variant="outlined"
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+          props.action(e.target.value);
+        }}
       />
     </Box>
   );

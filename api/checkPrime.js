@@ -12,11 +12,9 @@ router.get("/:number", async (req, res) => {
 
     const isPrime = checkForPrime(number);
 
-    const responseText = isPrime
-      ? `Given number ${number} is a prime number.`
-      : `Given number ${number} is not a prime number.`;
+    const resp = { isPrime: isPrime };
 
-    res.status(200).send(responseText);
+    res.status(200).send(resp);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server error");

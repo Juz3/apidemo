@@ -17,6 +17,7 @@
 
 h1 {
   font-size: 18pt;
+  color: #fff;
 }
 
 h2 {
@@ -30,4 +31,17 @@ h2 {
 
 .group-2 {
   margin-top: 50px;
+}
+
+.result-box {
+  color: rgb(252, 201, 61);
+  font-size: 14pt;
+  margin: 20px 0;
+}
+
+.MuiButton-root {
+  color: #fff !important;
+  border-color: #fff !important;
+  background-color: #162033 !important;
+  margin-top: 20px !important;
 }

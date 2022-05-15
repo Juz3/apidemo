@@ -12,10 +12,6 @@ app.use(express.json({ extended: true }));
 app.use("/api/checkprime", checkPrime);
 app.use("/api/sumandcheck", sumAndCheck);
 
-app.get("/api", (req, res) => {
-  res.send("Api root");
-});
-
 app.listen(port, () => {
   console.log(`REST API Demo listening on port ${port}`);
 });

@@ -1,9 +1,36 @@
-import React from "react";
+import { useState } from "react";
 import "./App.css";
 import Input from "./components/form/Input";
-import SubmitButton from "./components/form/SubmitButton";
+import Button from "@mui/material/Button";
+import getPrime from "./api/getPrime";
+import getSumAndCheck from "./api/getSumAndCheck";
 
 function App() {
+  const [multipleInt, setMultipleInt] = useState("");
+  const [singleInt, setSingleInt] = useState("");
+  const [sumAndCheck, setSumAndCheck] = useState("");
+  const [primeResult, setPrimeResult] = useState("");
+
+  const handleIntegerArray = (value: string) => {
+    setMultipleInt(value);
+  };
+
+  const handleSingleInt = (value: string) => {
+    setSingleInt(value);
+  };
+
+  const handleGetSumAndCheck = (value: string) => {
+    if (value !== null) {
+      getSumAndCheck(value, setSumAndCheck);
+    }
+  };
+
+  const handleGetPrime = (value: string) => {
+    if (value !== null) {
+      getPrime(value, setPrimeResult);
+    }
+  };
+
   return (
     <div className="Main-container">
       <header className="App-header">
@@ -13,22 +40,40 @@ function App() {
         </h1>
       </header>
       <div className="group-1">
+        <h1>Endpoint 1</h1>
+        <h2>Submit multiple integers as comma separated values.</h2>
         <h2>
-          Endpoint 1: Submit multiple integers separated by comma, calculate and
-          return the sum and tell if it's a prime number or not.
+          Calculate and return the sum and tell if it's a prime number or not.
         </h2>
 
-        <Input label="Give Integers, separated by comma" width="50ch" />
-        <SubmitButton label="Submit integer to endpoint 1" />
+        <Input
+          label="Give Integers, separated by comma"
+          width="50ch"
+          action={handleIntegerArray}
+        />
+        <Button
+          variant="outlined"
+          onClick={() => {
+            handleGetSumAndCheck(multipleInt);
+          }}
+        >
+          Submit
+        </Button>
+        <div className="result-box">{sumAndCheck}</div>
       </div>
       <div className="group-2">
-        <h2>
-          Endpoint 2: Submit a single integer and tell if it's a prime number or
-          not.
-        </h2>
-
-        <Input label="Give Integer" width="15ch" />
-        <SubmitButton label="Submit integer to endpoint 2" />
+        <h1>Endpoint 2</h1>
+        <h2>Submit a single integer and tell if it's a prime number or not.</h2>
+        <Input label="Give Integer" width="15ch" action={handleSingleInt} />
+        <Button
+          variant="outlined"
+          onClick={() => {
+            handleGetPrime(singleInt);
+          }}
+        >
+          Submit
+        </Button>
+        <div className="result-box">{primeResult}</div>
       </div>
     </div>
   );
