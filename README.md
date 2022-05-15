@@ -1,12 +1,13 @@
 # apidemo
 
-node.js REST API + React UI demo 05/2022
+Node.js REST API + React UI demo 05/2022
 
 Application that calculates prime numbers from user input.
 
 API routes:
 
 GET `{apiBaseURL}/api/checkprime/{input}`
+
 GET `{apiBaseURL}/api/sumandcheck/{input}`
 
 ## Install instructions
