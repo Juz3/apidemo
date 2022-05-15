@@ -20,7 +20,8 @@ function App() {
   };
 
   const handleGetSumAndCheck = (value: string) => {
-    if (value !== null) {
+    if (value !== null && value.length < 201) {
+      console.log(value.length);
       getSumAndCheck(value, setSumAndCheck);
     }
   };
@@ -45,6 +46,9 @@ function App() {
         <h2>
           Calculate and return the sum and tell if it's a prime number or not.
         </h2>
+        <p className="info">Example input: 1,2,3</p>
+        <p className="info">Maximum length of input: 200</p>
+        <p className="info">Maximum working sum of input: 9007199254740991</p>
 
         <Input
           label="Give Integers, separated by comma"
@@ -64,7 +68,8 @@ function App() {
       <div className="group-2">
         <h1>Endpoint 2</h1>
         <h2>Submit a single integer and tell if it's a prime number or not.</h2>
-        <Input label="Give Integer" width="15ch" action={handleSingleInt} />
+        <p className="info">Maximum working input: 9007199254740991</p>
+        <Input label="Give Integer" width="25ch" action={handleSingleInt} />
         <Button
           variant="outlined"
           onClick={() => {

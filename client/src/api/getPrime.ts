@@ -6,7 +6,9 @@ const getPrime = async (
     method: "GET",
   };
 
-  if (query !== "") {
+  const queryToInteger = parseInt(query, 10);
+
+  if (query !== "" && !isNaN(queryToInteger)) {
     const requestUrl = `/api/checkprime/${query}`;
 
     fetch(requestUrl, requestOptions)
@@ -17,8 +19,8 @@ const getPrime = async (
         console.log(data.isPrime);
 
         const responseText = data.isPrime
-          ? `Given number ${query} is a prime number.`
-          : `Given number ${query} is not a prime number.`;
+          ? `Given number ${queryToInteger} is a prime number.`
+          : `Given number ${queryToInteger} is not a prime number.`;
 
         setResult(responseText);
       });

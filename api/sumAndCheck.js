@@ -7,29 +7,20 @@ const calculateSum = (numberArray) => {
   let sum = 0;
 
   for (const num of numberArray) {
-    console.log(num);
-
     if (!isNaN(parseInt(num, 10))) {
       sum += parseInt(num, 10);
     }
   }
 
-  console.log("sum:", sum);
-
   return sum;
 };
 
-// GET api/sumandcheck/:numberArray
 router.get("/:numbers", async (req, res) => {
   try {
     const nums = req.params.numbers;
 
-    console.log("debug nums", nums);
     const numberArray = nums.split(",");
-    console.log("debug numberArray", numberArray);
-
     const sum = calculateSum(numberArray);
-
     const isPrime = checkForPrime(sum);
 
     const resp = { result: sum, isPrime: isPrime };

@@ -33,6 +33,13 @@ h2 {
   margin-top: 50px;
 }
 
+.info {
+  color: rgb(161, 118, 0);
+  font-size: 11pt;
+
+  margin: 0;
+}
+
 .result-box {
   color: rgb(252, 201, 61);
   font-size: 14pt;
