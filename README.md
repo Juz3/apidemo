@@ -24,5 +24,7 @@ Backend will use port 5000, frontend will use port 3000.
 ### Azure
 
 Azure App Services can be used for node.js applications. This can be used for both the node.js backend and React frontend.
+
 https://docs.microsoft.com/en-us/azure/app-service/
+
 https://docs.microsoft.com/en-us/azure/app-service/quickstart-nodejs?tabs=windows&pivots=development-environment-vscode
