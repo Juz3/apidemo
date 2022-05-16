@@ -7,6 +7,12 @@ export default function TextInput(props: {
   width: string;
   action: (value: string) => void;
 }) {
+  const handleOnKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+    }
+  };
+
   return (
     <Box
       component="form"
@@ -23,6 +29,9 @@ export default function TextInput(props: {
         variant="outlined"
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
           props.action(e.target.value);
+        }}
+        onKeyDown={(e: React.KeyboardEvent<HTMLElement>) => {
+          handleOnKeyDown(e);
         }}
       />
     </Box>
